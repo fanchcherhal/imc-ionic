@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  test=false;
   //poids:string;
   poids = '';
   taille = '';
@@ -21,6 +21,7 @@ export class HomePage {
   image2 = 'https://img.myloview.fr/images/imc-indice-de-masse-corporelle-2-400-121225711.jpg';
 
   onCalculer(){
+    this.test= true;
     this.imc2='';
     this.imc3 ='';
     this.imc4 ='';
