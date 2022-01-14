@@ -1,20 +1,58 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      IMC
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-list>
+  <ion-item>
+    <ion-label position="floating">Poids</ion-label>
+    <ion-input placeholder="Poids en kg." [(ngModel)]="poids"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Taille</ion-label>
+    <ion-input placeholder="Taille en cm"  [(ngModel)]="taille"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button color="primary" (click)="onCalculer()">Calculer</ion-button>
+  </ion-item>
+   
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    
+ 
+    
+
+  
+  <ion-item  [color]="couleur">
+    {{imc}} 
+  </ion-item>
+
+  <ion-item   [color]="couleur">
+    {{tranche}} 
+  </ion-item>
+
+  <ion-item   [color]="couleur">
+    {{imc2}} 
+  </ion-item>
+
+  <!-- <ion-item>
+  </ion-item> -->
+
+  <ion-item  [color]="couleur2">
+    {{imc3}} 
+  </ion-item>
+
+  <ion-item>
+    <ion-img [src]="image"></ion-img>
+    <ion-img [src]="image2"></ion-img>
+  </ion-item> 
+
+
+  
+</ion-list>
+
+  
 </ion-content>
