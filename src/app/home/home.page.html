@@ -20,12 +20,12 @@
     <ion-button color="primary" (click)="onCalculer()">Calculer</ion-button>
   </ion-item>
    
+  <ion-item>
+   <ion-img [src]="image2"></ion-img>
+  </ion-item>
 
-    
  <div *ngIf="test">
     
-
-  
   <ion-item  [color]="couleur">
     {{imc}} 
   </ion-item>
@@ -47,12 +47,16 @@
 
   <ion-item>
     <ion-img [src]="image"></ion-img>
-    <ion-img [src]="image2"></ion-img>
   </ion-item> 
+
+
 
 </div>
 
 </ion-list>
 
+<ion-item>
+  <ion-img [src]="image3"></ion-img>
+</ion-item> 
   
 </ion-content>

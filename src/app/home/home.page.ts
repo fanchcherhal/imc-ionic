@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TestComponentRenderer } from '@angular/core/testing';
 
 @Component({
   selector: 'app-home',
@@ -17,8 +18,9 @@ export class HomePage {
   imc3 ='';
   imc4 = '';
   tranche='';
-  image = 'https://dummyimage.com/100x100/ccc/444';
+  image = '';
   image2 = 'https://img.myloview.fr/images/imc-indice-de-masse-corporelle-2-400-121225711.jpg';
+  image3 = '';
 
   onCalculer(){
     this.test= true;
@@ -46,29 +48,31 @@ export class HomePage {
       this.tranche='Attention : il semblerait que vous souffriez de dénutrition';
       imc2 = (taille*taille*25)/10000;
       imc4 = (taille*taille*18.5)/10000;
-      this.imc2 = "  Pour une taille de  " + taille + "  cm, " + " votre poids devrait être entre "  + imc4.toFixed(1)  + "kg" + imc2.toFixed(1) + "kg";
+      this.imc2 = "  Pour une taille de  " + taille + "  cm, " + " votre poids devrait être entre   "  + imc4.toFixed(1)  + " kg et " + imc2.toFixed(1) + "kg";
       this.imc3 = "Conseil : Vous devez mangez plus de viande et de pomme de Terre";
       this.couleur="warning"; 
       this.couleur2="success";
       this.image = './assets/boeuf.jpg';
+      this.image3 = './assets/pommes-de-terre.jpg';
     }
     else if(imcNombre < 25)  // 18.5 <imc < 25
     {
       this.tranche='Tout est normal, vous pouvez continuez à vous alimentez comme vous le faites';
       this.couleur="success"; 
       this.image = './assets/succes.jpg';
+      this.image3 = '';
     }
     else if (imcNombre >= 25)
     {
       this.tranche='Attention : il semble que vous souffrez de la maladie du frigo';
       imc2 = (taille*taille*25)/10000;
       imc4 = (taille*taille*18.5)/10000;
-       this.imc2 = "  Pour une taille de  " + taille + " cm, " + " votre poids devrait être de   "  + imc4.toFixed(1)  + "kg" + imc2.toFixed(1) + "kg.";
+       this.imc2 = "  Pour une taille de  " + taille + " cm, " + " votre poids devrait être entre   "  + imc4.toFixed(1)  + " kg et " + imc2.toFixed(1) + "kg.";
        this.imc3 = "Conseil : Vous devez mangez plus de légume et de salade";
        this.couleur="danger"; 
        this.couleur2="success";
        this.image = './assets/salade-laitue.jpg';
-
+       this.image3 = './assets/11057068.jpg';
     }
     else {
       this.imc='Error !!!';
